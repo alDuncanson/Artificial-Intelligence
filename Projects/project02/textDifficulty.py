@@ -70,12 +70,14 @@ if __name__ == '__main__':
 	num_syllables = textstat.syllable_count(input_string)
 	num_words = textstat.lexicon_count(input_string)
 	num_sentences = textstat.sentence_count(input_string)
-	fk_score = textstat.flesch_reading_ease(input_string)
+	#fk_score = textstat.flesch_reading_ease(input_string)
+	flesch_kincaid_score = (206.835-(1.015*(num_words/num_sentences))-(84.6*(num_syllables/num_words)))
 
 	# print number of syllables, words, and sentences in the file
 	print ("\nNumber of syllables: ", num_syllables)
 	print ("Number of words: ", num_words)
 	print ("Number of sentences: ", num_sentences)
+	print ("Flesh Kincaid Score: ", flesch_kincaid_score)
 
 	output = get_new_string(input_string, copy_string)
 	initial_grade = check_reading_level(input_string)
@@ -83,7 +85,8 @@ if __name__ == '__main__':
 
 	# print the original text and the new text with their FK scores
 	print ("\n\nOriginal text: ", input_string)
-	print ("Flesch-Kincaid score: ", fk_score)
+	#print ("Flesch-Kincaid score: ", fk_score)
+	print ("Flesh-Kincaid score: ", flesch_kincaid_score)
 	print(initial_grade, "reading level")
 	print ("\n\nNew text: ", output)
 	print ("\nNew Flesch-Kincaid score: ", textstat.flesch_reading_ease(output))
