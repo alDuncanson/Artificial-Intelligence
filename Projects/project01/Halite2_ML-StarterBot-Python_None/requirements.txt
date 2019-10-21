@@ -13,4 +13,4 @@ six==1.11.0
 ##using system site-package 'python-tensorflow-cuda'
 #tensorflow==1.5.0
 #tensorflow-tensorboard==1.5.0
-Werkzeug==0.12.2
+Werkzeug==0.15.3
